@@ -132,9 +132,9 @@ end
 
 def num_points_scored(player)
   game_hash.each { |key, value|
-    value[:players].each { |k, v|
-      if k[:player_name] == player
-        return k[:points]
+    value[:players].each { |i|
+      if i[:player_name] == player
+        return i[:points]
       end 
     }
   }
@@ -142,9 +142,9 @@ end
 
 def shoe_size(player)
   game_hash.each { |key, value|
-    value[:players].each { |k, v|
-      if k[:player_name] == player
-        return k[:shoe]
+    value[:players].each { |i|
+      if i[:player_name] == player
+        return i[:shoe]
       end 
     }
   }
@@ -167,8 +167,8 @@ def player_numbers(team)
   
   game_hash.each { |key, value|
     if value[:team_name] == team
-      value[:players].each { |k, v|
-        team_numbers << k[:number]
+      value[:players].each { |i|
+        team_numbers << i[:number]
       }
     end
   }
@@ -177,9 +177,9 @@ end
 
 def player_stats(player)
   game_hash.each { |key, value|
-    value[:players].each { |k, v|
-      if k[:player_name] == player
-        return k
+    value[:players].each { |i|
+      if i[:player_name] == player
+        return i
       end 
     }
   }
@@ -190,10 +190,10 @@ def big_shoe_rebounds
   rebounds = 0
   
   game_hash.each { |key, value|
-    value[:players].each { |k, v|
-      if k[:shoe] > big_shoe
-        big_shoe = k[:shoe]
-        rebounds = k[:rebounds]
+    value[:players].each { |i|
+      if i[:shoe] > big_shoe
+        big_shoe = i[:shoe]
+        rebounds = i[:rebounds]
       end 
     }
   }
@@ -205,10 +205,10 @@ def most_points_scored
   name = ""
   
   game_hash.each { |key, value|
-    value[:players].each { |k, v|
-      if k[:points] > points
-        points = k[:points]
-        name = k[:player_name]
+    value[:players].each { |i|
+      if i[:points] > points
+        points = i[:points]
+        name = i[:player_name]
       end 
     }
   }
@@ -220,7 +220,9 @@ def winning_team
   away_points = 0
   winner = "Tie"
   
-  game_hash[:home].each
+  game_hash[:home][:players].each { |i|
+    home_points += i[:points]
+  }
 end
 
 
