@@ -145,7 +145,7 @@ def shoe_size(player)
     value[:players].each { |k, v|
       binding.pry
       if k[:player_name] == player
-        return k[:shoe_size]
+        return k[:shoe]
       end 
     }
   }
