@@ -223,6 +223,12 @@ def winning_team
   game_hash[:home][:players].each { |i|
     home_points += i[:points]
   }
+  
+  game_hash[:away][:players].each { |i|
+    away_points += i[:points]
+  }
+  
+  home_points > away_points ? 
 end
 
 
