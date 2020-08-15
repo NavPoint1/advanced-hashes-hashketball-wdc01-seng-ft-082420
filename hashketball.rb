@@ -264,7 +264,6 @@ def long_name_steals_a_ton?
       end 
     }
   }
-  binding.pry
   stealer_name == player_with_longest_name
 end
 
