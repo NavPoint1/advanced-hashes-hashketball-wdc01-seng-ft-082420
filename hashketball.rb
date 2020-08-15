@@ -197,7 +197,7 @@ def big_shoe_rebounds
       end 
     }
   }
-  winner = winning_team
+  name = player_with_longest_name
   rebounds
 end
 
@@ -234,8 +234,23 @@ def winning_team
   elsif away_points > home_points
     winner = game_hash[:away][:team_name]
   end
-  binding.pry
   winner
+end
+
+def player_with_longest_name
+  characters = 0
+  name = ""
+  
+  game_hash.each { |key, value|
+    value[:players].each { |i|
+      if i[:player_name].size > characters
+        characters = i[:player_name].size
+        name = i[:player_name]
+      end 
+    }
+  }
+  binding.pry
+  name
 end
 
 
