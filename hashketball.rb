@@ -197,7 +197,6 @@ def big_shoe_rebounds
       end 
     }
   }
-  long_name_steals_a_ton?
   rebounds
 end
 
