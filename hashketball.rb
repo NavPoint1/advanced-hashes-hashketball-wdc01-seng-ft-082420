@@ -163,7 +163,9 @@ def team_names
 end
 
 def player_numbers(team)
-  
+  game_hash.each { |key, value|
+    
+  }
 end
 
 def player_stats(player)
