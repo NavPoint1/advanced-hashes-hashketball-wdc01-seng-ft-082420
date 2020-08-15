@@ -146,6 +146,14 @@ def team_names
   [game_hash[:home][:team_name],game_hash[:away][:team_name]]
 end
 
+def player_numbers(team)
+  
+end
+
+def player_stats(player)
+  
+end
+
 
 
 
