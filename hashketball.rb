@@ -197,6 +197,7 @@ def big_shoe_rebounds
       end 
     }
   }
+  name = most_points_scored
   rebounds
 end
 
@@ -212,7 +213,6 @@ def most_points_scored
       end 
     }
   }
-  binding.pry
   name
 end
 
