@@ -168,6 +168,7 @@ def player_numbers(team)
   game_hash.each { |key, value|
     if value[:team_name] == team
       value[:players].each { |k, v|
+        binding.pry
         team_numbers << v[number]
       }
     end
