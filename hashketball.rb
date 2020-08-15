@@ -163,9 +163,13 @@ def team_names
 end
 
 def player_numbers(team)
+  team_numbers = []
+  
   game_hash.each { |key, value|
     if value[:team_name] == team
-      
+      value[:players].each { |k, v|
+        team_numbers << v[number]
+      }
     end
   }
 end
