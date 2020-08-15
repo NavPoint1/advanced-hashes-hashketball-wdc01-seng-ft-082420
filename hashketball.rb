@@ -197,7 +197,7 @@ def big_shoe_rebounds
       end 
     }
   }
-  name = player_with_longest_name
+  long_name_steals_a_ton?
   rebounds
 end
 
@@ -249,10 +249,24 @@ def player_with_longest_name
       end 
     }
   }
-  binding.pry
   name
 end
 
+def long_name_steals_a_ton?
+  steals = 0
+  stealer_name = ""
+  
+  game_hash.each { |key, value|
+    value[:players].each { |i|
+      if i[:steals] > steals
+        steals = i[:steals]
+        stealer_name = i[:player_name]
+      end 
+    }
+  }
+  binding.pry
+  stealer_name == player_with_longest_name
+end
 
 
 
